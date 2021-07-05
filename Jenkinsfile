@@ -1,12 +1,13 @@
 pipeline {
     agent any
-    
+    tools {
+        maven 'maven'
+    }
     
     stages {
         stage('Build') {
             steps {
-                  // Get some code from a GitHub repository
-                sh "echo Hello"
+                sh "mvn clean install"
             }
         }
 
