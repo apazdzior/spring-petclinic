@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Get some code from a GitHub repository
+                  // Get some code from a GitHub repository
                 git 'https://github.com/apazdzior/spring-petclinic.git'
                 sh "mvn clean install"
             }
