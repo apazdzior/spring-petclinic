@@ -3,7 +3,7 @@ pipeline {
     
     tools {
         //indicates to Jenkins that I want to use gradle in Jenkinsfile
-        maven '3.8.1'
+        maven "maven"
     }
     
     stages {
