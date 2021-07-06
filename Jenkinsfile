@@ -7,31 +7,24 @@ pipeline {
         DOCKERHUB_CREDENTIALS = credentials('agata13-dockerhub')   
     }
     stages {
- 
         stage('Build') {
             steps {
                 sh 'mvn clean install'
             }
         }
-         stage('Build image') {
+        stage('Build image') {
              steps {
-               
-                        sh 'docker build -t agata13/petclinic:latest .'
-                 
+                 sh 'docker build -t agata13/petclinic:1.0 .'
              } 
-         }
+        }
         stage('Login') {
-            steps{
-                script {
-                        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'   
-                }
+            steps {
+                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'   
             }
         }
         stage('Push') {
-            steps{
-                script {
-                        sh 'docker push agata13/petclinic:latest'   
-                }
+            steps {
+                 sh 'docker push agata13/petclinic:1.0'   
             }
         }
       }
