@@ -12,7 +12,9 @@ pipeline {
         }
          stage('Build image') {
              steps {
-                 docker.build("petclinic/test")    
+                 script{
+                     def app = docker.build("petclinic/test")    
+                 }
              }
        }  
 
