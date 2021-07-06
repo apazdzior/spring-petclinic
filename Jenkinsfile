@@ -15,9 +15,9 @@ pipeline {
         }
          stage('Build image') {
              steps {
-                 script { 
+               
                         sh 'docker build -t agata13/petclinic:latest .'
-                 }
+                 
              } 
          }
         stage('Login') {
