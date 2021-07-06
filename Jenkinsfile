@@ -27,10 +27,10 @@ pipeline {
                  sh 'docker push agata13/petclinic:1.0'   
             }
         }
+    }
         post {
             always {
                 sh 'docker logout'   
             }
         }  
-    }
 }
