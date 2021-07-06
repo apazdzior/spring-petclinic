@@ -12,8 +12,7 @@ pipeline {
         }
          stage('Build image') {
              steps {
-                def app
-                app = docker.build("petclinic/test")    
+                 docker.build("petclinic/test")    
              }
        }  
 
