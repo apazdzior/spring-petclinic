@@ -13,9 +13,7 @@ pipeline {
          stage('Build image') {
              steps {
                  script{
-                     def app = docker.build("petclinic/test")
-                     docker.withRegistry('https://registry.hub.docker.com', 'git')           
-                     app.push()
+                        docker build -t petclinic .
                  }
              } 
          }  
