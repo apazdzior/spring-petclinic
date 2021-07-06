@@ -23,6 +23,13 @@ pipeline {
         stage('Login') {
             steps{
                 script {
+                        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'   
+                }
+            }
+        }
+        stage('Push') {
+            steps{
+                script {
                         sh 'docker push agata13/petclinic:latest'   
                 }
             }
