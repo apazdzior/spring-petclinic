@@ -2,9 +2,12 @@ pipeline {
     agent any
     tools {
         maven 'maven'
-    }
-    
+    } 
     stages {
+        def app     
+        stage('Clone repository') {                   
+            checkout scm    
+        } 
         stage('Build') {
             steps {
                 sh "mvn clean install"
