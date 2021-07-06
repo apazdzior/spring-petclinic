@@ -10,6 +10,11 @@ pipeline {
                 sh "mvn clean install"
             }
         }
+         stage('Image') {
+            steps {
+                sh "docker build -t spring-petclinic ."
+            }
+        }
 
     }
 }
