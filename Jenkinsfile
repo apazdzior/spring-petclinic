@@ -20,7 +20,7 @@ pipeline {
           stage('Push image') {
               steps {
                  script{
-                     docker.withRegistry('https://hub.docker.com/repository/docker/agata13/new-petclinic', 'git')           
+                     docker.withRegistry('https://registry.hub.docker.com', 'git')           
                     app.push 
                  }
                 }
